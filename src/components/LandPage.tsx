@@ -30,7 +30,7 @@ const LandPage = () => {
     const navigate = useNavigate();
 
     const reloadList = () => {
-        fetch('http://localhost:3001/v1/todolists')
+        fetch('https://todo-list-db-service.herokuapp.com/v1/todolists')
             .then(res => res.json())
             .then(data => setData(data))
     }
@@ -42,7 +42,7 @@ const LandPage = () => {
     const createTodoList: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
         event.preventDefault();
 
-        await fetch('http://localhost:3001/v1/todolists', {
+        await fetch('https://todo-list-db-service.herokuapp.com/v1/todolists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

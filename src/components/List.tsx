@@ -31,7 +31,7 @@ interface ListProps {
 const List = ({ list, reloadList }: ListProps) => {
 
     const deleteList = async () => {
-        await fetch(`http://localhost:3001/v1/todolists/${list.id}`, {
+        await fetch(`https://todo-list-db-service.herokuapp.com/v1/todolists/${list.id}`, {
             method: 'DELETE'
         });
         reloadList();

@@ -52,7 +52,7 @@ const Form = ({ reloadTodos }: TodosProps) => {
     const createNewTodo = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        await fetch(`http://localhost:3001/v1/todolists/${params.id}/todo`, {
+        await fetch(`https://todo-list-db-service.herokuapp.com/v1/todolists/${params.id}/todo`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

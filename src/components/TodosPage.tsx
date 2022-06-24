@@ -71,7 +71,7 @@ const TodosPage = () => {
     const [isDoneChecked, setIsDoneChecked] = useState(false);
 
     const reloadTodos = async () => {
-        return await fetch(`http://localhost:3001/v1/todolists/${params.id}/todo`)
+        return await fetch(`https://todo-list-db-service.herokuapp.com/v1/todolists/${params.id}/todo`)
             .then(res => res.json())
             .then(data => {
                 setTodos(data)
@@ -100,7 +100,7 @@ const TodosPage = () => {
     };
 
     const handleUpdate = async (id: BigInt) => {
-        await fetch(`http://localhost:3001/v1/todos/${id}`, {
+        await fetch(`https://todo-list-db-service.herokuapp.com/v1/todos/${id}`, {
             method: 'PUT',
             headers: { 'Contenundefinedt-Type': 'application/json' },
         });
@@ -108,7 +108,7 @@ const TodosPage = () => {
     };
 
     const deleteTodo = async (id: BigInt) => {
-        await fetch(`http://localhost:3001/v1/todos/${id}`, {
+        await fetch(`https://todo-list-db-service.herokuapp.com/v1/todos/${id}`, {
             method: 'DELETE',
         });
         reloadTodos();
